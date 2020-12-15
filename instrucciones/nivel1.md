@@ -43,7 +43,13 @@ pueden hacer una llamada HTTP a su servidor sin usar un navegador.
 Para validar nuestro formulario, vamos a tener  que hacer lo siguiente:
 1. Obtener cada valor del formulario
 2. Hacer validaciones individuales, por ejemplo:
+    
     - no vacío
+
+        if (input.length === 0) {
+          return 'El input que ingresó está vacío'
+        }
+
     - al menos 2 caracteres
     - máximo de 250 caracteres
     - sólo letras
@@ -54,6 +60,8 @@ Para validar nuestro formulario, vamos a tener  que hacer lo siguiente:
 4. CSS:
     - Mostrar un estilo de error en los campos que tengan problemas
     - Mostrar un mensaje de error en los campos que tengan problemas
+    -Mostrar n estilo y mensaje de exito cuando todo sea valido
+5. Redireccionra al usuario a la siguiente página
 
 1.Obtener el valor de un formulario
 =========================
@@ -110,7 +118,7 @@ Para validar nuestro formulario, vamos a tener  que hacer lo siguiente:
   Esto va a retornar un booleano. True si sólo contiene letras o false
   si no contiene sólo letras.
 
-  TODO: Agregar la validación para que sólo tenga letras.  
+  TODO: Agregar la validación para que sólo tenga letras.
   TODO: Escribir una prueba
 
 3.Enviando (submit) el formulario
