@@ -42,15 +42,6 @@ function validarRegalo($regaloUsuario) {
     }
 }
 
-
-//Nivel 1.md
-const $botonEnviarCarta = document.querySelector("#enviar-carta");
-
-$botonEnviarCarta.onclick = function(event) {
-    manejarErrores(validarForm());
-    event.preventDefault();
-}
-
 function validarForm() {
     const $nombreUsuario = document.formulario.nombre.value;
     const $ciudadUsuario = document.formulario.ciudad.value;
@@ -79,7 +70,6 @@ function manejarErrores(errores) {
         if(error){
             cantidadErrores++;
             $formulario[key].className = "error"
-            
             const $error = document.createElement('li');
             $error.innerText = error;
             $errores.appendChild($error);
@@ -92,6 +82,27 @@ function manejarErrores(errores) {
 
     return cantidadErrores;
 }
+
+function redireccionarAWishlist(){
+            setTimeout(function() {
+                window.open('./wishlist.html', "_self")
+            }, 5000)
+}
+
+//Nivel 1.md
+const $botonEnviarCarta = document.querySelector("#enviar-carta");
+
+$botonEnviarCarta.onclick = function(event) {
+    manejarErrores(validarForm());
+
+    if (manejarErrores(validarForm()) === 0) {
+        redireccionarAWishlist();
+    }
+
+    event.preventDefault();
+}
+
+
 
 //TAREA!
 
